@@ -1,25 +1,31 @@
 #include <iostream>
+#include "ChocolateInventoryModules.h"
+#include <vector>
 using namespace std;
 
-
-//function declarations
-void menuOptions(){
-    cout << "Please enter one of the following menu options: " << endl;
-    cout << "F - Fill an order" << endl;
-    cout << "P - Print inventory" << endl;
-    cout << "O - Order inventory" << endl;
-    cout << "E - Exit" << endl;
-}
-
-void printInventory(){
-    //this function prints a receipt of the inventory
-}
-
-
-
+/*
+ Note to self: initialize values you want to keep in the main function, pass by reference in functions to keep changes
+ also, keep separate printing functions and functions that do calculations
+ */
 
 int main() {
+    //Starting inventory:
+    vector<int>inventoryLarge={1500};
+    //5 pounds each
+
+    vector<int>inventoryMedium={1200};
+    //3 pounds each
+
+    vector<int>inventorySmall={7000};
+    //1 pound each
+
+    //Prices of inventory per size:
+    vector<float>priceLarge{30.50};
+    vector<float>priceMedium{25.99};
+    vector<float>priceSmall{10.50};
+
     bool run = true;
+    cout<<"Welcome to \"Sarah's Succulents\" Chocolate Factory!"<<endl;
     while(run) {
         //menuOptions call will go here
         menuOptions();
@@ -32,9 +38,14 @@ int main() {
                 break;
             case 'P':
                     //printInventory function call will go here
+                    printInventory(inventoryLarge, inventoryMedium, inventorySmall);
                 break;
             case 'O':
                     //orderInventory function call will go here
+                orderInventory(inventoryLarge, inventoryMedium, inventorySmall);
+                cout << inventoryLarge.at(0)<<endl;
+                cout<<inventoryMedium.at(0)<<endl;
+                cout<<inventorySmall.at(0)<<endl;
                 break;
             case 'E':
                     //Exit
