@@ -54,7 +54,7 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
         cout<<endl;
         cout << "Please fill the number of pounds of chocolate in the order: ";
         cin >> numPounds;
-
+        cout<<endl;
         while(i<numPounds){
             if(sizeLarge.at(0)<=0){
                 break;
