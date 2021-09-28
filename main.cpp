@@ -28,7 +28,8 @@ int main() {
     vector<float>priceSmall{10.50};
 
     bool run = true;
-    cout<<"Welcome to \"Sarah's Succulents\" Chocolate Factory!"<<endl;
+    cout<<endl;
+    cout<<"Welcome to \"Sarah's Succulent Sweets\" Chocolate Factory!"<<endl;
     while(run) {
         //menuOptions call will go here
         menuOptions();

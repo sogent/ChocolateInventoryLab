@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sogent/CLionProjects/ChocolateInventoryLab/ChocolateInventoryModules.cpp
+iostream
+-
+vector
+-
+string
+-
+iomanip
+-
+ChocolateInventoryModules.h
+/Users/sogent/CLionProjects/ChocolateInventoryLab/ChocolateInventoryModules.h
+
+/Users/sogent/CLionProjects/ChocolateInventoryLab/ChocolateInventoryModules.h
+vector
+-
+
