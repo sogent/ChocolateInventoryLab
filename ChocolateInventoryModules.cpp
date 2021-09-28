@@ -73,7 +73,7 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
             cout<<numPounds<<endl;
 
         //filling medium bars per 2 pounds
-        while(i<numPounds&&numPounds>2){
+        while(i<numPounds&&numPounds>=2){
             if(sizeMedium.at(0)<=0){
                 break;
             }
