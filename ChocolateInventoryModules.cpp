@@ -25,8 +25,60 @@ void printInventory(vector<int>sizeLarge, vector<int>sizeMedium, vector<int>size
 
 }
 
-void fillOrder(){
+void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSmall, int& OrderNum) {
+    int numPounds;
+    int i = 0;
+    int LargeBars = 0;
+    int MediumBars = 0;
+    int SmallBars = 0;
+    int remainderPounds=0;
+    bool run = true;
+    while (run) {
+        cout << "Please fill the number of pounds of chocolate in the order: ";
+        cin >> numPounds;
 
+        while(i<numPounds){
+            if(sizeLarge.at(0)<=0){
+                break;
+            }
+            numPounds=numPounds-5;
+            ++LargeBars;
+            --sizeLarge.at(0);
+        }
+
+        cout<< numPounds<<endl;
+
+        while(i<numPounds&&numPounds>2){
+            if(sizeMedium.at(0)<=0){
+                break;
+            }
+            numPounds=numPounds-2;
+            ++MediumBars;
+            --sizeMedium.at(0);
+        }
+
+        cout<<numPounds<<endl;
+
+        while(i<numPounds){
+            if(sizeSmall.at(0)==0){
+                break;
+            }
+            numPounds=numPounds-1;
+            ++SmallBars;
+            --sizeSmall.at(0);
+        }
+
+
+
+    ++OrderNum;
+    break;
+    }
+    cout << "Chocolate Order #"<<OrderNum<<endl;
+    cout<<"Large Bars: "<<LargeBars<<endl;
+    cout<<"Medium Bars: "<<MediumBars<<endl;
+    cout<<"Small Bars: "<<SmallBars<<endl;
+
+    //shipping and taxes still need to be added
 }
 
  int orderInventory(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSmall){
@@ -46,6 +98,5 @@ void fillOrder(){
         sizeSmall.at(0)=userNum+sizeSmall.at(0);
         return sizeSmall.at(0);
     }
-
 }
 

@@ -9,6 +9,9 @@ using namespace std;
  */
 
 int main() {
+    //Initialize inventory order number
+    int ChocolateOrderNum=0;
+
     //Starting inventory:
     vector<int>inventoryLarge={1500};
     //5 pounds each
@@ -35,6 +38,7 @@ int main() {
         switch (userInput) {
             case 'F':
                     //fillOrder function call will go here
+                fillOrder(inventoryLarge, inventoryMedium, inventorySmall, ChocolateOrderNum);
                 break;
             case 'P':
                     //printInventory function call will go here
