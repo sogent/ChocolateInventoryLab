@@ -19,10 +19,11 @@ void menuOptions(){
 
 void printInventory(vector<int>sizeLarge, vector<int>sizeMedium, vector<int>sizeSmall){
     //this function prints a receipt of the inventory
-    cout<<"Chocolate Inventory"<<endl;
-    cout<<"Large Bars: "<<sizeLarge.at(0)<<endl;
-    cout<<"Medium Bars: "<<sizeMedium.at(0)<<endl;
-    cout<<"Small Bars: "<<sizeSmall.at(0)<<endl;
+    cout<<endl;
+    cout<<right<<setw(20)<<"Chocolate Inventory"<<endl;
+    cout<<"Large Bars: "<<right<<setw(9)<<sizeLarge.at(0)<<endl;
+    cout<<"Medium Bars: "<<right<<setw(8)<<sizeMedium.at(0)<<endl;
+    cout<<"Small Bars: "<<right<<setw(9)<<sizeSmall.at(0);
     cout<<endl;
 
 }
@@ -50,6 +51,7 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
 
     bool run = true;
     while (run) {
+        cout<<endl;
         cout << "Please fill the number of pounds of chocolate in the order: ";
         cin >> numPounds;
 
@@ -62,7 +64,6 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
             --sizeLarge.at(0);
         }
 
-        cout<< numPounds<<endl;
 
         while(i<numPounds&&numPounds>2){
             if(sizeMedium.at(0)<=0){
@@ -73,7 +74,6 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
             --sizeMedium.at(0);
         }
 
-        cout<<numPounds<<endl;
 
         while(i<numPounds){
             if(sizeSmall.at(0)==0){
@@ -108,8 +108,6 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
             shippingCost=19.75;
         }
 
-
-
     ++OrderNum;
     break;
     }
@@ -132,29 +130,48 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
 
 }
 
- int orderInventory(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSmall){
-    char userInput;
-    int userNum;
-    bool run=true;
+void orderInventory(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSmall){
+
+     int userNum;
+     bool run=true;
     while(run) {
         cout << "What size of bar would you like to order (L, M, or S)?"<<endl;
+        char userInput;
         cin >>userInput;
         toupper(userInput);
         if (userInput == 'L') {
             cout << "How many bars are needed?"<<endl;
             cin>>userNum;
+            if(userNum<0){
+                cout<<"Invalid entry, please try again"<<endl;
+                cout<<endl;
+                continue;
+            }
             sizeLarge.at(0) = userNum + sizeLarge.at(0);
-            return sizeLarge.at(0);
+            break;
+
         } else if (userInput == 'M') {
             cout << "How many bars are needed?"<<endl;
             cin>>userNum;
+            if(userNum<0) {
+                cout << "Invalid entry, please try again" << endl;
+                cout << endl;
+                continue;
+            }
             sizeMedium.at(0) = userNum + sizeMedium.at(0);
-            return sizeMedium.at(0);
+            break;
+
         } else if (userInput == 'S') {
             cout << "How many bars are needed?"<<endl;
             cin>>userNum;
+            if(userNum<0) {
+                cout << "Invalid entry, please try again" << endl;
+                cout << endl;
+                continue;
+            }
             sizeSmall.at(0) = userNum + sizeSmall.at(0);
-            return sizeSmall.at(0);
+           break;
+
         } else{
             cout<<"Invalid entry, please try again"<<endl;
             cout<<endl;

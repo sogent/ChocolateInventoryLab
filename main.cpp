@@ -31,47 +31,38 @@ int main() {
     cout<<endl;
     cout<<"Welcome to \"Sarah's Succulent Sweets\" Chocolate Factory!"<<endl;
     while(run) {
-        //menuOptions call will go here
+        //menuOptions function
         menuOptions();
         char userInput;
         cin >> userInput;
         toupper(userInput);
         switch (userInput) {
             case 'F':
-                    //fillOrder function call will go here
+                    //fillOrder function
                 fillOrder(inventoryLarge, inventoryMedium, inventorySmall, ChocolateOrderNum);
                 break;
             case 'P':
-                    //printInventory function call will go here
+                    //printInventory function
                     printInventory(inventoryLarge, inventoryMedium, inventorySmall);
                 break;
             case 'O':
-                    //orderInventory function call will go here
+                    //orderInventory
                 orderInventory(inventoryLarge, inventoryMedium, inventorySmall);
-                cout << inventoryLarge.at(0)<<endl;
-                cout<<inventoryMedium.at(0)<<endl;
-                cout<<inventorySmall.at(0)<<endl;
                 break;
             case 'E':
                     //Exit
+                    cout<< "Goodbye!"<<endl;
                 run = false;
 
                 break;
             default:
                 cout << "Invalid input, please try again" << endl;
+                cout<<endl;
 
                 break;
 
 
         }
-
-
-
-
-
     }
-
-
-
     return 0;
 }
