@@ -37,6 +37,7 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
     int LargeBarPounds=5;
     int MediumBarPounds=2;
     int SmallBarPounds=1;
+    int remainder=0;
     float LargeBarCost=30.50;
     float MediumBarCost=25.99;
     float SmallBarCost=10.50;
@@ -55,26 +56,40 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
         cout << "Please fill the number of pounds of chocolate in the order: ";
         cin >> numPounds;
         cout<<endl;
+
+        //filling large bars per 5 pounds
         while(i<numPounds){
             if(sizeLarge.at(0)<=0){
+                break;
+            }
+            if(numPounds<5){
                 break;
             }
             numPounds=numPounds-5;
             ++LargeBars;
             --sizeLarge.at(0);
-        }
+            }
 
+            cout<<numPounds<<endl;
 
+        //filling medium bars per 2 pounds
         while(i<numPounds&&numPounds>2){
             if(sizeMedium.at(0)<=0){
                 break;
             }
+            if(numPounds<2){
+               break;
+           }
+            numPounds=numPounds+remainder;
             numPounds=numPounds-2;
             ++MediumBars;
             --sizeMedium.at(0);
         }
 
+        cout<<numPounds<<endl;
 
+
+        //filling small bars per 1 pound
         while(i<numPounds){
             if(sizeSmall.at(0)==0){
                 break;
