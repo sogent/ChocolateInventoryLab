@@ -5,7 +5,6 @@ using namespace std;
 
 /*
  Note to self: initialize values you want to keep in the main function, pass by reference in functions to keep changes
- also, keep separate printing functions and functions that do calculations
  */
 
 int main() {
@@ -22,20 +21,15 @@ int main() {
     vector<int>inventorySmall={7000};
     //1 pound each
 
-    //Prices of inventory per size:
-    vector<float>priceLarge{30.50};
-    vector<float>priceMedium{25.99};
-    vector<float>priceSmall{10.50};
-
     bool run = true;
     cout<<endl;
     cout<<"Welcome to \"Sarah's Succulent Sweets\" Chocolate Factory!"<<endl;
     while(run) {
         //menuOptions function
         menuOptions();
-        char userInput;
-        cin >> userInput;
-        toupper(userInput);
+        char userInput1, userInput;
+        cin >> userInput1;
+        userInput=toupper(userInput1);
         switch (userInput) {
             case 'F':
                     //fillOrder function

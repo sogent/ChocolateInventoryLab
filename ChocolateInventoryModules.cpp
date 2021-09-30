@@ -70,7 +70,6 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
             --sizeLarge.at(0);
             }
 
-            cout<<numPounds<<endl;
 
         //filling medium bars per 2 pounds
         while(i<numPounds&&numPounds>=2){
@@ -85,8 +84,6 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
             ++MediumBars;
             --sizeMedium.at(0);
         }
-
-        cout<<numPounds<<endl;
 
 
         //filling small bars per 1 pound
@@ -131,9 +128,9 @@ void fillOrder(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&sizeSm
     cout<<setprecision(2)<<fixed;
     //order print out
     cout<<right<<setw(24)<< "Chocolate Order #"<<OrderNum<<endl;
-    cout<<left<<setw(10)<<"Large Bars: "<<LargeBars<<right<<setw(10)<<"$"<<LargeBarCost<<endl;
-    cout<<"Medium Bars: "<<MediumBars<<right<<setw(10)<<"$"<<MediumBarCost<<endl;
-    cout<<"Small bars: "<<SmallBars<<setw(15)<<right<<setw(13)<<"$"<<SmallBarCost<<endl;
+    cout<<"Large Bars: "<<LargeBars<<right<<setw(8)<<"$"<<LargeBarCost<<endl;
+    cout<<"Medium Bars: "<<MediumBars<<right<<setw(8)<<"$"<<MediumBarCost<<endl;
+    cout<<"Small bars: "<<SmallBars<<right<<setw(11)<<"$"<<SmallBarCost<<endl;
 
     cout<<endl;
     //shipping, taxes and total print out
@@ -151,9 +148,9 @@ void orderInventory(vector<int>&sizeLarge, vector<int>&sizeMedium, vector<int>&s
      bool run=true;
     while(run) {
         cout << "What size of bar would you like to order (L, M, or S)?"<<endl;
-        char userInput;
-        cin >>userInput;
-        toupper(userInput);
+        char userInput1, userInput;
+        cin >>userInput1;
+        userInput= toupper(userInput1);
         if (userInput == 'L') {
             cout << "How many bars are needed?"<<endl;
             cin>>userNum;
